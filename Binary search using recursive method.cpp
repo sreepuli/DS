@@ -1,9 +1,8 @@
 /* Binary search using recursive function */
 #include<stdio.h>
 int binarysearch(int, int);
-int a[20], key;
 int main() {
-    int i, n, pos;
+    int i, n, pos,a[20],key;
     printf("enter n:");
     scanf("%d",&n);
     printf("enter n elements\n");
