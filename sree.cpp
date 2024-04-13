@@ -14,7 +14,7 @@
 	 printf("sorted list:\n");
 	 for(i=0;i<n;i++)
 	 {
-	 	printf("%d",&a[i]);
+	 	printf("%4d",&a[i]);
 	 }
 	 return 0;
  }
