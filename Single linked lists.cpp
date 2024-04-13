@@ -111,7 +111,6 @@ void insert_last(int item)
  else 
  { 
  cur=head; 
- /*Finding the last node address*/ 
  while(cur->next!=NULL) 
  { 
  cur = cur->next; 
