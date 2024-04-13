@@ -5,7 +5,7 @@
  	int a[20],i,n;
  	printf("enter n");
  	scanf("%d",&n);
- 	printf("enter %4d elements",n);
+ 	printf("enter %d elements",n);
  	for(i=0;i<n;i++)
  	{
  		scanf("%d",&a[i]);
@@ -14,7 +14,7 @@
 	 printf("sorted list:\n");
 	 for(i=0;i<n;i++)
 	 {
-	 	printf("%d",&a[i]);
+	 	printf("%4d",&a[i]);
 	 }
 	 return 0;
  }
