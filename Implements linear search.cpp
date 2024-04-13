@@ -6,7 +6,6 @@ int LinearSearch(int a[], int n, int key);
 int main()
 {
    int a[20], i, n, key, pos;
-   clrscr();
    printf("Enter n:");
    scanf("%d",&n);
    printf("Enter %d elements:\n",n);
@@ -19,7 +18,6 @@ int main()
    printf("Search is unsuccessful");
    else 
    printf("Key is found at index: %d", pos);
-    getch();
     return 0;
 }
 int LinearSearch(int a[], int n, int key)
@@ -29,6 +27,6 @@ int LinearSearch(int a[], int n, int key)
 { 
     if(a[i]==key) return i;
 }
-    return 0;
+    returnÂ 0;
 
 }
