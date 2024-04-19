@@ -1,3 +1,4 @@
+#include<stdio.h>
 #define MAX 20
 int stack[MAX];
 int top=-1;
@@ -5,8 +6,7 @@ void push(int item)
 {
     if(top==MAX-1)
       printf("stcak OVERFLOW");
-    else#include<stdio.h>
-
+    else
     {
      top++;
      stack[top]=item;
