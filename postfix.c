@@ -2,47 +2,45 @@
 #define MAX 20
 int stack[MAX];
 int top=-1;
+
 void push(int item)
 {
     if(top==MAX-1)
-      printf("stcak OVERFLOW");
+        printf("Stack OVERFLOW\n");
     else
     {
-     top++;
-     stack[top]=item;
+        top++;
+        stack[top]=item;
     }
 }
+
 int pop()
 {
     if(top==-1)
-      printf("stack under flow");
+        printf("Stack underflow\n");
     else
     {
-    int item=stack[top];
-     top--;
-     return item;
+        int item=stack[top];
+        top--;
+        return item;
     }
 }
+
 int isOperand(char ch)
 {
-    if(ch>='0'&&ch<='9')
-       return 1;
-    else
-       return 0;
+    return (ch >= '0' && ch <= '9');
 }
+
 int isEmpty()
 {
-    if(top==-1)
-      return 1;
-    else
-    return 0;
+    return (top == -1);
 }
 
 int main()
 {
     char postfix[MAX],ch;
     int A,B,i,r;
-    printf("enter the postfix expression\n");
+    printf("Enter the postfix expression:\n");
     scanf("%s",postfix);
     for(i=0;postfix[i]!='\0';i++)
     {
@@ -53,31 +51,40 @@ int main()
         {
             A=pop();
             B=pop();
-                switch(ch)
-                {
-                    case '+': r=A+B;
-                              break;
-                    case '-': r=A-B;
-                              break;
-                    case '*': r=A*B;
-                              break;
-                    case '/': r=A/B;
-                              break;
-                    case '%': r=A%B;
-                              break;
-                }
-                push(r);
+            switch(ch)
+            {
+                case '+': r=B+A;
+                          break;
+                case '-': r=B-A;
+                          break;
+                case '*': r=B*A;
+                          break;
+                case '/': 
+                          if (A != 0)
+                            r=B/A;
+                          else {
+                            printf("Division by zero error\n");
+                            return -1; // Exiting the program
+                          }
+                          break;
+                case '%': 
+                          if (A != 0)
+                            r=B%A;
+                          else {
+                            printf("Modulo by zero error\n");
+                            return -1; // Exiting the program
+                          }
+                          break;
+            }
+            push(r);
         }
     }
     r=pop();
-    if(!isEmpty)
-      printf("invalid postfix expression\n");
+    if(isEmpty())
+        printf("Result=%d\n",r);
     else
-    {
-      printf("result=%d\n",r);
-    }
+        printf("Invalid postfix expression\n");
+
     return 0;
 }
-    
-    
-    
+
